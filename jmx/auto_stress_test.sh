@@ -8,6 +8,7 @@ export os_type=`uname`
 
 # 需要在系统变量中定义jmeter根目录的位置，如下
 # export jmeter_path="/your jmeter path/"
+export jmeter_path="/Users/juanxu/Desktop/software/apache-jmeter-5.3/"
 
 echo "自动化压测开始"
 
@@ -31,6 +32,7 @@ do
     else
         sed -i "s/thread_num/${num}/g" ${jmx_filename}
     fi
+
 
     # JMeter 静默压测
     ${jmeter_path}/bin/jmeter -n -t ${jmx_filename} -l ${jtl_filename}
